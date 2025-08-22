@@ -1,0 +1,166 @@
+/* Background */
+.header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #6a11cb;
+  margin: 0;
+}
+
+.header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2575fc;
+  margin: 0.3rem 0;
+}
+
+.header p {
+  font-size: 14px;
+  color: #666;
+  margin: 0.5rem 0 0;
+}
+
+
+.auth {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1rem;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Fields */
+.field {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #333;
+}
+
+.field input {
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.field input:focus {
+  border-color: #2575fc;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.2);
+}
+
+/* Invalid Fields */
+.field.invalid input {
+  border-color: #e63946;
+}
+
+.field small {
+  margin-top: 4px;
+  color: #e63946;
+  font-size: 13px;
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover:enabled {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.btn:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+
+  .field input {
+    font-size: 14px;
+    padding: 0.7rem;
+  }
+
+  .btn {
+    font-size: 15px;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth {
+    padding: 0.5rem;
+  }
+
+  .card {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .field label {
+    font-size: 14px;
+  }
+
+  .field input {
+    font-size: 13px;
+    padding: 0.6rem;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 0.7rem;
+    border-radius: 10px;
+  }
+}

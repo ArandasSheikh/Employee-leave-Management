@@ -1,0 +1,44 @@
+<div class="auth">
+  <div class="card">
+    
+    <!-- Heading -->
+    <div class="header">
+      <h1>WELCOME TO</h1>
+      <h2>Employee Leave Management</h2>
+      <p>Please sign in to continue</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+      
+      <!-- Email -->
+      <div class="field" [class.invalid]="loginForm.controls['emailId'].touched && loginForm.controls['emailId'].invalid">
+        <label for="email">Email</label>
+        <input id="email" type="text" formControlName="emailId" placeholder="e.g. you@example.com" />
+        <small *ngIf="loginForm.controls['emailId'].touched && loginForm.controls['emailId'].errors?.['required']">
+          Email required
+        </small>
+        <small *ngIf="loginForm.controls['emailId'].touched && loginForm.controls['emailId'].errors?.['email']">
+          Invalid email
+        </small>
+      </div>
+
+      <!-- Password -->
+      <div class="field" [class.invalid]="loginForm.controls['password'].touched && loginForm.controls['password'].invalid">
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password" placeholder="Your password" />
+        <small *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].errors?.['required']">
+          Password required
+        </small>
+        <small *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].errors?.['minlength']">
+          Minimum 6 characters
+        </small>
+      </div>
+
+      <!-- Submit -->
+      <button class="btn" type="submit" [disabled]="loginForm.invalid || loading">
+        <span *ngIf="!loading">Sign in</span>
+        <span *ngIf="loading">Loading...</span>
+      </button>
+    </form>
+  </div>
+</div>
