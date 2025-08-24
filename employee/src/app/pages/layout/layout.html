@@ -1,1 +1,17 @@
-<p>layout works!</p>
+<div class="container">
+  <!-- Sidebar (left side) -->
+  <div class="sidebar">
+    <h2>Welcome to Employee Portal</h2>
+   <button [routerLink]="['/layout/dashboard']" routerLinkActive="active">Dashboard</button>
+    <button [routerLink]="['/layout/employee']" routerLinkActive="active">Employee</button>
+    <button (click)="logout()">Logout</button>
+  </div>
+
+  <!-- Main content (right side) -->
+<div class="content">
+  <!-- <h2>Welcome to Employee Portal</h2> -->
+  <!-- <img src="assets/welcome.png" alt="Welcome" style="max-width: 60%; margin-top: 20px;"> -->
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
