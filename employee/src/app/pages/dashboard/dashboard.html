@@ -1,2 +1,79 @@
-<p>dashboard works!</p>
-bbb
+<div class="dashboard-container container mt-4">
+  <h2 class="mb-4 text-center fw-bold">📊 Employee Dashboard</h2>
+
+  <!-- Summary Cards Grid -->
+  <div class="row g-4 mb-5">
+    <!-- Card 1 -->
+    <div class="col-md-6">
+      <div class="card shadow summary-card text-center">
+        <div class="card-body">
+          <h3 class="fw-bold">{{ totalEmployees }}</h3>
+          <p>Total Employees</p>
+          <button class="btn custom-btn">View All</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-6">
+      <div class="card shadow summary-card text-center">
+        <div class="card-body">
+          <h3 class="fw-bold">{{ totalLeaves }}</h3>
+          <p>Total Leaves</p>
+          <button class="btn custom-btn">Details</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-6">
+      <div class="card shadow summary-card text-center">
+        <div class="card-body">
+          <h3 class="fw-bold">{{ pendingRequests }}</h3>
+          <p>Pending Requests</p>
+          <button class="btn custom-btn">Check</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col-md-6">
+      <div class="card shadow summary-card text-center">
+        <div class="card-body">
+          <h3 class="fw-bold">{{ approvedLeaves }}</h3>
+          <p>Approved Leaves</p>
+          <button class="btn custom-btn">History</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent Employees Section -->
+  <div class="recent-section shadow p-4 rounded">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h3 class="fw-semibold">🕒 Recent Employees on Leave</h3>
+      <button class="btn custom-btn">View All</button>
+    </div>
+
+    <table class="table table-hover align-middle">
+      <thead class="table-primary">
+        <tr>
+          <th>Employee Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Contact No</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(emp of recentEmployees; track $index) {
+          <tr>
+            <td><span class="badge bg-secondary">{{ emp.employeeId }}</span></td>
+            <td>{{ emp.employeeName }}</td>
+            <td>{{ emp.emailId }}</td>
+            <td>{{ emp.contactNo }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

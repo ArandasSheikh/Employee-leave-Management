@@ -1,0 +1,63 @@
+.dashboard-container {
+  h2 {
+    font-size: 2rem;
+    color: #2575fc; // bluish heading
+  }
+
+  /* Summary Cards */
+  .summary-card {
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .summary-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .summary-card h3 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: #2575fc;
+  }
+
+  /* Gradient Button */
+  .custom-btn {
+    border: none;
+    border-radius: 30px;
+    padding: 6px 18px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: linear-gradient(45deg, #4b6cb7, #2575fc); // blue + purplish
+    color: white;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .custom-btn:hover {
+    background: linear-gradient(45deg, #2575fc, #283e66);
+    transform: scale(1.05);
+  }
+
+  /* Recent Section */
+  .recent-section {
+    background: #ffffff;
+    border-radius: 15px;
+  }
+
+  table {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  thead {
+    font-weight: bold;
+    font-size: 1.05rem;
+  }
+
+  tbody tr:hover {
+    background: #f8f9fa;
+    transform: scale(1.01);
+    transition: 0.2s;
+  }
+}

@@ -1,1 +1,24 @@
-<p>employee works!</p>
+<div class="employee-container">
+  <h2>All Employees</h2>
+
+  <table border="1" cellpadding="8" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th>Employee Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Department</th>
+      </tr>
+    </thead>
+    <tbody>
+        @for(emp of employees;track $index ){
+            <tr>
+                <td>{{emp.employeeId}}</td>
+                <td>{{emp.employeeName}}</td>
+                <td>{{emp.emailId}}</td>
+                <td>{{emp.department}}</td>
+            </tr>
+        }
+    </tbody>
+  </table>
+</div>

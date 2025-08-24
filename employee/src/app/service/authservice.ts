@@ -13,5 +13,10 @@ export class Authservice {
   login(payload: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, payload);
   }
+
+
+  getAllemployee():Observable<any>{
+    return this.http.get<any>('https://freeapi.miniprojectideas.com/api/EmployeeLeave/GetEmployees')
+  }
   
 }
