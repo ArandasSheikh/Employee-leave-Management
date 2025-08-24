@@ -1,0 +1,177 @@
+/* ====== Employee Container ====== */
+.employee-container {
+  position: relative;
+  padding: 20px;
+  background: #f9fafc;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.employee-container h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* ====== Button ====== */
+.add-btn {
+  float: right;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #003f7f);
+  transform: translateY(-1px);
+}
+
+/* ====== Table Styling ====== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+thead {
+  background: #007bff;
+  color: white;
+}
+
+thead th {
+  text-align: left;
+  padding: 12px 10px;
+  font-size: 14px;
+}
+
+tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s;
+}
+
+tbody tr:hover {
+  background: #f5f9ff;
+}
+
+tbody td {
+  padding: 10px;
+  font-size: 14px;
+  color: #444;
+}
+
+/* ====== Modal Backdrop ====== */
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* ====== Modal Box ====== */
+.modal {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  min-width: 400px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+/* ====== Form Elements ====== */
+.modal label {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+}
+
+.modal input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.modal input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.4);
+}
+
+/* ====== Modal Actions ====== */
+.modal-actions {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.modal-actions button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Cancel button */
+.modal-actions button:nth-child(1) {
+  background: #ccc;
+  color: #333;
+}
+
+.modal-actions button:nth-child(1):hover {
+  background: #b5b5b5;
+}
+
+/* Save button (if you add later) */
+.modal-actions button.save {
+  background: #28a745;
+  color: white;
+}
+
+.modal-actions button.save:hover {
+  background: #218838;
+}
+
+/* ====== Animation ====== */
+@keyframes fadeIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Hide modal by default */
+.hidden {
+  display: none !important;
+}

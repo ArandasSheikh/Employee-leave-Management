@@ -1,5 +1,8 @@
 <div class="employee-container">
-  <h2>All Employees</h2>
+  <h2 style="display: inline-block;">All Employees</h2>
+
+  <!-- Top-right button -->
+  <button class="add-btn" (click)="openModal()">Employee Form</button>
 
   <table border="1" cellpadding="8" cellspacing="0" width="100%">
     <thead>
@@ -21,4 +24,25 @@
         }
     </tbody>
   </table>
+</div>
+
+<!-- Modal -->
+<div #modalRef class="modal-backdrop hidden">
+  <div class="modal">
+    <h3>Add Employee</h3>
+    <form>
+      <label>Name:</label>
+      <input type="text" />
+
+      <label>Email:</label>
+      <input type="email" />
+
+      <label>Department:</label>
+      <input type="text" />
+
+      <div class="modal-actions">
+        <button type="button" (click)="closeModal()">Cancel</button>
+      </div>
+    </form>
+  </div>
 </div>

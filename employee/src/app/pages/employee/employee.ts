@@ -1,32 +1,43 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ElementRef, ViewChild } from '@angular/core';
 import { Authservice } from '../../service/authservice';
 
 @Component({
   selector: 'app-employee',
   imports: [],
   templateUrl: './employee.html',
-  styleUrl: './employee.scss'
+  styleUrls: ['./employee.scss']
 })
 export class Employee {
 
-  authservice = inject(Authservice)
-  employees :any[]=[];
-  
+  authservice = inject(Authservice);
+  employees: any[] = [];
 
-  ngOnInit():void{
+  // 👇 Modal reference
+  @ViewChild('modalRef') modal!: ElementRef;
+
+  ngOnInit(): void {
     this.loademployee();
   }
 
-loademployee(){
+  loademployee() {
     console.log("🔄 Calling GetEmployees API...");
     this.authservice.getAllemployee().subscribe({
       next: (res) => {
         console.log("✅ API Response:", res);
-        this.employees = res.data || res; // response me data key ho to use karo
+        this.employees = res.data || res;
       },
-      error:(err)=>{
+      error: (err) => {
         console.error("❌ Error fetching employees:", err);
       }
     });
+  }
+
+  // 👇 Modal control methods
+  openModal() {
+    this.modal.nativeElement.classList.remove('hidden');
+  }
+
+  closeModal() {
+    this.modal.nativeElement.classList.add('hidden');
   }
 }
